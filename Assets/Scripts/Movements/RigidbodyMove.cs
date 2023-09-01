@@ -11,6 +11,8 @@ public class RigidbodyMove: IMoveble
     
     public void Move(Vector3 direction, float speed)
     {
-        _rigidbody.velocity = direction * speed;
+        direction *= speed;
+        direction.y = _rigidbody.velocity.y;
+        _rigidbody.velocity = direction;
     }
 }
