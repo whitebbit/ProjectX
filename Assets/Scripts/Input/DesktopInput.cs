@@ -22,6 +22,7 @@ public class DesktopInput: IInputService
         return new Dictionary<Binds, bool>
         {
             {Binds.Jump, Input.GetButtonDown("Jump")},
+            {Binds.Attack, Input.GetMouseButtonDown(0)}
         };
     }
 }

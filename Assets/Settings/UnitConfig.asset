@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bedf666f4439cb4f80ca3645db31f89, type: 3}
   m_Name: UnitConfig
   m_EditorClassIdentifier: 
-  name: 
+  name: Player
   health: 100
   damage: 10
   speed: 10
-  jumpForce: 5
+  jumpForce: 7.5
   prefab: {fileID: 0}

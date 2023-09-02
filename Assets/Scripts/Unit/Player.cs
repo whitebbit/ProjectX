@@ -2,13 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : Unit
 {
     [SerializeField] private Transform camera;
+    [SerializeField] private List<WeaponConfig> weaponConfigs = new List<WeaponConfig>();
     private IMoveble _movement;
     private IRotatable _rotate;
     private IJumpble _jump;
+    private Ammunition _ammunition;
     private Rigidbody _rigidbody;
 
     private void Awake()
@@ -20,6 +23,23 @@ public class Player : Unit
     {
         Rotate();
         Jump();
+
+        Attack();
+        
+    }
+
+    private void Attack()
+    {
+        if (InputService.GetBinds()[Binds.Attack])
+        {
+            _ammunition.CurrentWeapon.PerformAttack();
+            Debug.Log("Attack");
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
     }
 
     private void Jump()
@@ -31,16 +51,10 @@ public class Player : Unit
     private bool ReadyForJump()
     {
         bool input = InputService.GetBinds()[Binds.Jump];
-        bool grounded = (transform.position + transform.up).IsGrounded(-transform.up, 1f);
+        bool grounded = (transform.position + transform.up).IsGrounded(-transform.up, 2f);
         return input && grounded;
-    } 
-    
-
-    private void FixedUpdate()
-    {
-        Move();
     }
-
+    
     private void Move()
     {
         Vector2 axis = InputService.GetMovementAxis();
@@ -60,5 +74,6 @@ public class Player : Unit
         _movement = new RigidbodyMove(_rigidbody);
         _rotate = new FirstPersonLookRotation(transform, camera);
         _jump = new RigidbodyJump(_rigidbody);
+        _ammunition = new Ammunition(camera, weaponConfigs);
     }
 }
