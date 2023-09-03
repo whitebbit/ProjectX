@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2078903349808384138}
+  - component: {fileID: 7478893915341581263}
   m_Layer: 0
   m_Name: StartPoint
-  m_TagString: Untagged
+  m_TagString: WeaponStartPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,13 +25,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739339724899379921}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.959}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.319}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 902540372275590309}
+  m_Father: {fileID: 288295306866749602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7478893915341581263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739339724899379921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5273f97e5b4dd2b4bb4a143f822411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2090729832140431794
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,6 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 902540372275590309}
+  - component: {fileID: 3936056558877381365}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -56,14 +70,34 @@ Transform:
   m_GameObject: {fileID: 2090729832140431794}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.636, y: -0.25, z: 1.211}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 288295306866749602}
-  - {fileID: 2078903349808384138}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3936056558877381365
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090729832140431794}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 83d6bde51bba7c34b988256a0a25f2ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &292893714091700214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75,6 +109,18 @@ PrefabInstance:
     - target: {fileID: 1017833632825182, guid: 18858e1fa014dad47bf1ef11b8180102, type: 3}
       propertyPath: m_Name
       value: Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256154359867724, guid: 18858e1fa014dad47bf1ef11b8180102, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504400402007792, guid: 18858e1fa014dad47bf1ef11b8180102, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504400402007792, guid: 18858e1fa014dad47bf1ef11b8180102, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.03418895
       objectReference: {fileID: 0}
     - target: {fileID: 4690835058007892, guid: 18858e1fa014dad47bf1ef11b8180102, type: 3}
       propertyPath: m_LocalScale.x
@@ -130,7 +176,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4690835058007892, guid: 18858e1fa014dad47bf1ef11b8180102,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2078903349808384138}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18858e1fa014dad47bf1ef11b8180102, type: 3}
 --- !u!4 &288295306866749602 stripped

@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Deagle
+  m_Controller: {fileID: 9100000, guid: 66fdc422cf9468b4b86186812d604867, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d368350f61d6b4146a3d61312bb227b4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c7ee58c09b98ccb4c8b21f89c10c2fe4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4f66bfe2d97f4d44bbeb0b2595bcce2f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3e2f35270ee266f42a4ea689d732038d, type: 2}

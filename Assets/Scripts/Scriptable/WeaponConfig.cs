@@ -4,14 +4,18 @@ using UnityEngine.Serialization;
 [CreateAssetMenu(menuName = "Source/Weapon/WeaponConfig", fileName = "WeaponConfig", order = 0)]
 public class WeaponConfig: ScriptableObject
 {
-    [Header("Name")]
-    [SerializeField] private string name;
     
+    [Header("Configs and Presets")]
+    [SerializeField] private RaycastAttackConfig raycastConfig;
+    [field: SerializeField] public WeaponDecalsPreset DecalsPreset { get; private set; }
+    [field: SerializeField] public WeaponTimings Timings { get; private set; }
+    [field: SerializeField] public ShakePreset Shake { get; private set; }
+
     [Header("Common")]
     [SerializeField, Min(0)] private float damage;
     [SerializeField, Min(0)] private float attackRange;
     [SerializeField] private WeaponType type;
-    [SerializeField] private RaycastAttackConfig raycastAttackConfig;
+    
     [Header("Prefab")]
     [SerializeField] private Transform prefab;
     
@@ -21,11 +25,6 @@ public class WeaponConfig: ScriptableObject
     public float AttackRange => attackRange;
     public Transform Prefab => prefab;
     public WeaponType Type => type;
-    public RaycastAttackConfig RaycastAttackConfig => raycastAttackConfig;
-    public Transform SpawnWeapon(Transform parent, Vector3 position)
-    {
-        Transform body = Instantiate(prefab, parent);
-        body.position = position;
-        return body;
-    }
+    public RaycastAttackConfig RaycastConfig => raycastConfig;
+    
 }

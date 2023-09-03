@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28481c0281394f2ca269d6a2d7686a94, type: 3}
+  m_Name: ShotgunConfig
+  m_EditorClassIdentifier: 
+  raycastConfig: {fileID: 11400000, guid: 392cd921e3eda55459f0b8c1da5caabf, type: 2}
+  <DecalsPreset>k__BackingField: {fileID: 11400000, guid: 9420a915e04a94f4a8499d966c43e801,
+    type: 2}
+  <Timings>k__BackingField: {fileID: 11400000, guid: 981f7810b37ef244ca35dc4e0b692293,
+    type: 2}
+  <Shake>k__BackingField: {fileID: 11400000, guid: b82a76ad6a160c047bb926beab553958,
+    type: 2}
+  damage: 1
+  attackRange: 20
+  type: 1
+  prefab: {fileID: 902540372275590309, guid: e15b6341204088747a9f8f08744df6d0, type: 3}

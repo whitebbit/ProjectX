@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bedf666f4439cb4f80ca3645db31f89, type: 3}
   m_Name: UnitConfig
   m_EditorClassIdentifier: 
-  name: Player
+  <DecalsPreset>k__BackingField: {fileID: 11400000, guid: 8b138586efab2ef43847589b78987bcb,
+    type: 2}
   health: 100
   damage: 10
   speed: 10

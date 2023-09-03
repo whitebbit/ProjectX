@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[CreateAssetMenu(menuName = "Source/Units/Config", fileName = "UnitConfig", order = 0)]
+[CreateAssetMenu(menuName = "Source/Units/UnitConfig", fileName = "UnitConfig", order = 0)]
 public class UnitConfig : ScriptableObject
 {
-    [Header("Name"), Space] [SerializeField] private string name;
+    [field: Header("Configs and Presets")]
+    [field: SerializeField] public UnitDecalsPreset DecalsPreset { get; private set; }
     
     [Header("Common"), Space] 
     [SerializeField, Min(0)] private float health;
@@ -16,7 +17,7 @@ public class UnitConfig : ScriptableObject
     
     [Header("Prefab"), Space] 
     [SerializeField] private Unit prefab;
-
+    
     public string Name => name;
     public float Health => health;
     public float Damage => damage;

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28481c0281394f2ca269d6a2d7686a94, type: 3}
+  m_Name: DeagleConfig
+  m_EditorClassIdentifier: 
+  raycastConfig: {fileID: 11400000, guid: 3c9d27e02a31dda478cd4edebda221bf, type: 2}
+  <DecalsPreset>k__BackingField: {fileID: 11400000, guid: 7e79b8bd5b013c14c827dc0b604d2ea1,
+    type: 2}
+  <Timings>k__BackingField: {fileID: 11400000, guid: fd8ebf8b603b922429938d981a6419ce,
+    type: 2}
+  <Shake>k__BackingField: {fileID: 11400000, guid: b82a76ad6a160c047bb926beab553958,
+    type: 2}
+  damage: 50
+  attackRange: 30
+  type: 1
+  prefab: {fileID: 2646775375875615385, guid: e5bb175b1819ad448896a762ef1d93b3, type: 3}

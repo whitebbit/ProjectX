@@ -6,7 +6,10 @@ using UnityEngine.Serialization;
 
 public class Player : Unit
 {
-    [SerializeField] private Transform camera;
+    [Header("Player")]
+    [SerializeField] private Transform currentCamera;
+    [SerializeField] private Transform weaponSpawnPoint;
+    [Space]
     [SerializeField] private List<WeaponConfig> weaponConfigs = new List<WeaponConfig>();
     private IMoveble _movement;
     private IRotatable _rotate;
@@ -23,7 +26,6 @@ public class Player : Unit
     {
         Rotate();
         Jump();
-
         Attack();
         
     }
@@ -33,7 +35,6 @@ public class Player : Unit
         if (InputService.GetBinds()[Binds.Attack])
         {
             _ammunition.CurrentWeapon.PerformAttack();
-            Debug.Log("Attack");
         }
     }
 
@@ -72,8 +73,8 @@ public class Player : Unit
         Cursor.lockState = CursorLockMode.Locked;
         _rigidbody = GetComponent<Rigidbody>();
         _movement = new RigidbodyMove(_rigidbody);
-        _rotate = new FirstPersonLookRotation(transform, camera);
+        _rotate = new FirstPersonLookRotation(transform, currentCamera);
         _jump = new RigidbodyJump(_rigidbody);
-        _ammunition = new Ammunition(camera, weaponConfigs);
+        _ammunition = new Ammunition(weaponConfigs, weaponSpawnPoint);
     }
 }

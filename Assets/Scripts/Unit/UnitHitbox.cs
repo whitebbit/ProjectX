@@ -1,20 +1,32 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 public class UnitHitbox: MonoBehaviour, IWeaponVisitor
 {
     [SerializeField] protected Unit unit;
-    [SerializeField] protected Collider hitbox;
+    protected Collider hitbox;
+
+    private void Awake()
+    {
+        hitbox = GetComponent<Collider>();
+    }
+
     public void Visit(WeaponRaycastAttack weapon, RaycastHit hit)
     {
-        DefaultRaycastVisit(weapon, null, hit);
+        DefaultRaycastVisit(weapon, unit.Config.DecalsPreset.DefaultDecal, hit);
     }
     
-    protected void DefaultRaycastVisit(WeaponAttackBehaviour weapon, GameObject decal, RaycastHit hit)
+    protected void DefaultRaycastVisit(WeaponAttackBehaviour weapon, ParticleSystem decal, RaycastHit hit)
     {
-        var damage = weapon.Damage;
         //Unit damage
-        //Spawn decal
-        Debug.Log("Take damage");
+        SpawnDecal(decal, hit);
+        Debug.Log($"{gameObject.name} take {weapon.Damage} damage");
     }
+
+    private void SpawnDecal(ParticleSystem decal, RaycastHit hit)
+    {
+        DecalSpawner.Spawn(decal, hit.point, Quaternion.LookRotation(hit.normal), transform);
+    }
+    
 }
