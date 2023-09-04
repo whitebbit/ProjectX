@@ -19,9 +19,8 @@ public class UnitHitbox: MonoBehaviour, IWeaponVisitor
     
     protected void DefaultRaycastVisit(WeaponAttackBehaviour weapon, ParticleSystem decal, RaycastHit hit)
     {
-        //Unit damage
+        unit.Damageable.ApplyDamage(weapon.Damage);
         SpawnDecal(decal, hit);
-        Debug.Log($"{gameObject.name} take {weapon.Damage} damage");
     }
 
     private void SpawnDecal(ParticleSystem decal, RaycastHit hit)

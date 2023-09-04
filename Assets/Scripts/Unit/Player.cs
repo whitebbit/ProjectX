@@ -52,7 +52,7 @@ public class Player : Unit
     private bool ReadyForJump()
     {
         bool input = InputService.GetBoolBinds()[Binds.Jump];
-        bool grounded = (transform.position + transform.up).IsGrounded(-transform.up, 2f);
+        bool grounded = (transform.position + transform.up).IsGrounded(-transform.up, 1.25f);
         return input && grounded;
     }
     

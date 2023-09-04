@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28481c0281394f2ca269d6a2d7686a94, type: 3}
+  m_Name: SPAS12Config
+  m_EditorClassIdentifier: 
+  raycastConfig: {fileID: 11400000, guid: ad28419f63e15164cb05e3eda407e60e, type: 2}
+  <DecalsPreset>k__BackingField: {fileID: 11400000, guid: e118a24dc5f224641b6615e94faa3f52,
+    type: 2}
+  <Timings>k__BackingField: {fileID: 11400000, guid: b930a4d2f8925914c94b662727d0d773,
+    type: 2}
+  <Shake>k__BackingField: {fileID: 11400000, guid: 6ccce461bb36f4949a66d53f8e82ff69,
+    type: 2}
+  damage: 5
+  attackRange: 25
+  type: 1
+  prefab: {fileID: 4703802708127495555, guid: 0afb5e78d2a4f574f88bac8874528fb5, type: 3}

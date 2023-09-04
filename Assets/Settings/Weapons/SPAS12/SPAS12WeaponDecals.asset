@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e366667a40b8422cbd61d66d9f649975, type: 3}
+  m_Name: SPAS12WeaponDecals
+  m_EditorClassIdentifier: 
+  <Attack>k__BackingField: {fileID: 19880796, guid: 23fc589b73077394db72d954703e8d1c,
+    type: 3}
+  <Miss>k__BackingField: {fileID: 198150121130992912, guid: e5448bf09bf80c84683234d05d3ccf91,
+    type: 3}
