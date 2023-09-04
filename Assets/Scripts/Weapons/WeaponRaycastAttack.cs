@@ -10,13 +10,12 @@ using Cysharp.Threading.Tasks;
 public class WeaponRaycastAttack: WeaponAttackBehaviour
 {
     private readonly RaycastAttackConfig _raycastConfig;
-    private Camera _camera;
+    private readonly Camera _camera;
     public WeaponRaycastAttack(Transform body, Transform attackPoint, WeaponConfig config, RaycastAttackConfig raycastConfig) : 
         base(body, attackPoint, config)
     {
         _camera = Camera.main;
         _raycastConfig = raycastConfig;
-        
     }
     
     public override async void PerformAttack()

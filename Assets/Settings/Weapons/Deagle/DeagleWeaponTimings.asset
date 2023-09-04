@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8c5e4d82947644e853129664de23c5, type: 3}
   m_Name: DeagleWeaponTimings
   m_EditorClassIdentifier: 
-  <DelayUntilNextAttack>k__BackingField: 0.3
+  <DelayUntilNextAttack>k__BackingField: 0.135

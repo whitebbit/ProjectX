@@ -17,5 +17,5 @@ MonoBehaviour:
   health: 100
   damage: 10
   speed: 10
-  jumpForce: 7.5
+  jumpForce: 5
   prefab: {fileID: 0}

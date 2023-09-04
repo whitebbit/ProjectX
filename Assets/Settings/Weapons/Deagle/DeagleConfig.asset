@@ -17,7 +17,7 @@ MonoBehaviour:
     type: 2}
   <Timings>k__BackingField: {fileID: 11400000, guid: fd8ebf8b603b922429938d981a6419ce,
     type: 2}
-  <Shake>k__BackingField: {fileID: 11400000, guid: b82a76ad6a160c047bb926beab553958,
+  <Shake>k__BackingField: {fileID: 11400000, guid: 6a11570b46461d24b9b01e27c0865a05,
     type: 2}
   damage: 50
   attackRange: 30

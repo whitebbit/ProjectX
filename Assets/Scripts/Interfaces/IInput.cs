@@ -6,5 +6,6 @@ public interface IInputService
 {
     public Vector2 GetMovementAxis();
     public Vector2 GetCameraRotationAxis();
-    public Dictionary<Binds, bool> GetBinds();
+    public Dictionary<Binds, bool> GetBoolBinds();
+    public Dictionary<Binds, float> GetFloatBinds();
 }

@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 2360355409640061362}
   - component: {fileID: 6029543708134189306}
   m_Layer: 0
-  m_Name: StartPoint
+  m_Name: WeaponAttackPoint
   m_TagString: WeaponStartPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

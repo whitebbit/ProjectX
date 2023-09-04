@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 public class Player : Unit
 {
     [Header("Player")]
-    [SerializeField] private Transform currentCamera;
+    [SerializeField] private Transform head;
     [SerializeField] private Transform weaponSpawnPoint;
     [Space]
     [SerializeField] private List<WeaponConfig> weaponConfigs = new List<WeaponConfig>();
@@ -27,12 +27,12 @@ public class Player : Unit
         Rotate();
         Jump();
         Attack();
-        
+        SwitchWeapon();
     }
 
     private void Attack()
     {
-        if (InputService.GetBinds()[Binds.Attack])
+        if (InputService.GetBoolBinds()[Binds.Attack])
         {
             _ammunition.CurrentWeapon.PerformAttack();
         }
@@ -51,7 +51,7 @@ public class Player : Unit
 
     private bool ReadyForJump()
     {
-        bool input = InputService.GetBinds()[Binds.Jump];
+        bool input = InputService.GetBoolBinds()[Binds.Jump];
         bool grounded = (transform.position + transform.up).IsGrounded(-transform.up, 2f);
         return input && grounded;
     }
@@ -68,12 +68,18 @@ public class Player : Unit
         _rotate.Rotate(InputService.GetCameraRotationAxis(), 1);
     }
 
+    private void SwitchWeapon()
+    {
+        float scroll = InputService.GetFloatBinds()[Binds.SwitchWeapon];
+        if(scroll != 0 )
+            _ammunition.SwitchWeapon(scroll);
+    }
     private void Initialize()
     {
         Cursor.lockState = CursorLockMode.Locked;
         _rigidbody = GetComponent<Rigidbody>();
         _movement = new RigidbodyMove(_rigidbody);
-        _rotate = new FirstPersonLookRotation(transform, currentCamera);
+        _rotate = new FirstPersonLookRotation(transform, head);
         _jump = new RigidbodyJump(_rigidbody);
         _ammunition = new Ammunition(weaponConfigs, weaponSpawnPoint);
     }

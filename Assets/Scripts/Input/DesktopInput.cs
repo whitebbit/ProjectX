@@ -17,12 +17,21 @@ public class DesktopInput: IInputService
         return new Vector2(x, y);
     }
 
-    public Dictionary<Binds, bool> GetBinds()
+    public Dictionary<Binds, bool> GetBoolBinds()
     {
         return new Dictionary<Binds, bool>
         {
             {Binds.Jump, Input.GetButtonDown("Jump")},
-            {Binds.Attack, Input.GetMouseButtonDown(0)}
+            {Binds.Attack, Input.GetMouseButtonDown(0)},
+            
+        };
+    }
+
+    public Dictionary<Binds, float> GetFloatBinds()
+    {
+        return new Dictionary<Binds, float>
+        {
+            {Binds.SwitchWeapon, Input.GetAxis("Mouse ScrollWheel")},
         };
     }
 }
