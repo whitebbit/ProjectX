@@ -15,4 +15,11 @@ public class Enemy : Unit
     {
         
     }
+
+    protected override void InitializeHealth()
+    {
+        var ragdoll = new Ragdoll(transform);
+        var dying = new UnitRagdollDying(ragdoll, _animations);
+        _health = new UnitHealth(dying, config.Health);
+    }
 }

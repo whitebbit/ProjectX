@@ -7,22 +7,24 @@ using UnityEngine.Serialization;
 
 public abstract class Unit : MonoBehaviour
 {
-    [SerializeField] private UnitConfig config;
+    [SerializeField] protected UnitConfig config;
     
-    private UnitAnimations _animations;
+    protected UnitAnimations _animations;
     private IDamageable _damageable;
-    private UnitHealth _health;
+    protected UnitHealth _health;
     public UnitConfig Config => config;
     public UnitAnimations Animations => _animations;
     public IDamageable Damageable => _damageable;
     private void Awake()
     {
         var anim = GetComponent<Animator>();
-        var ragdoll = new Ragdoll(transform);
-
         _animations = new UnitAnimations(anim);
-        var dying = new UnitRagdollDying(ragdoll, _animations);
-        _health = new UnitHealth(dying, config.Health);
+        
+        InitializeHealth();
+       
         _damageable = new UnitDamageable(_health);
     }
+
+
+    protected abstract void InitializeHealth();
 }

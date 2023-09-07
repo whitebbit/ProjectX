@@ -18,20 +18,18 @@ public class Ammunition
     private void InitializeWeapons(List<WeaponConfig> weapons, Transform spawnPoint)
     {
         Weapons = new List<WeaponAttackBehaviour>();
+        var weaponBuilder = new WeaponBuilder();
         foreach (var weapon in weapons)
         {
-            Transform body = Object.Instantiate(weapon.Prefab, spawnPoint.position, 
-                Quaternion.identity, spawnPoint);
-            var attackPoint = body.GetComponentInChildren<WeaponAttackPoint>().transform;
-            body.gameObject.SetActive(false);
-            switch (weapon.Type)
-            {
-                case WeaponType.Raycast:
-                    Weapons.Add(
-                        new WeaponRaycastAttack(body, attackPoint, weapon, weapon.RaycastConfig));
-                    break;;
-            }
+            var currentWeapon = weaponBuilder
+                .Reset()
+                .WithConfig(weapon)
+                .Build(spawnPoint);
+            
+            Weapons.Add(currentWeapon);
         }
+
+        DisableWeapons();
     }
 
     public void SwitchWeapon(float scrollDirection)
@@ -74,5 +72,13 @@ public class Ammunition
             return;
         
         CurrentWeapon.Body.gameObject.SetActive(active);
+    }
+
+    private void DisableWeapons()
+    {
+        foreach (var weapon in Weapons)
+        {
+            weapon.Body.gameObject.SetActive(false);
+        }
     }
 }

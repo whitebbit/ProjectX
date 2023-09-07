@@ -22,6 +22,11 @@ public class Player : Unit
         Initialize();
     }
 
+    protected override void InitializeHealth()
+    {
+        
+    }
+
     private void Update()
     {
         Rotate();

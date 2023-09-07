@@ -2,9 +2,12 @@
 
 public static class DecalSpawner
 {
-    public static ParticleSystem Spawn(ParticleSystem decal, Vector3 position, Quaternion rotation, Transform parent = null)
+    public static Transform Spawn(ParticleSystem decal, Vector3 position, Quaternion rotation, Transform parent = null)
     {
-        ParticleSystem spawnedObject = Object.Instantiate(decal, position, rotation, parent);
+        Transform spawnedObject = Object.Instantiate(decal).transform;
+        spawnedObject.position = position;
+        spawnedObject.rotation = rotation;
+        spawnedObject.parent = parent;
         return spawnedObject;
     }
 }

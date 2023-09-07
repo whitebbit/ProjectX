@@ -31,6 +31,7 @@ public class WeaponRaycastAttack: WeaponAttackBehaviour
 
     public void PerformShot()
     {
+        Debug.Log(AttackPoint);
         DecalSpawner.Spawn(Config.DecalsPreset.Attack, AttackPoint.position, 
             Quaternion.LookRotation(AttackPoint.forward), AttackPoint);
         Animation.Attack();

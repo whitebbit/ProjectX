@@ -19,7 +19,7 @@ MonoBehaviour:
     type: 2}
   <Shake>k__BackingField: {fileID: 11400000, guid: 6ccce461bb36f4949a66d53f8e82ff69,
     type: 2}
-  damage: 5
+  damage: 500
   attackRange: 25
   type: 1
   prefab: {fileID: 4703802708127495555, guid: 0afb5e78d2a4f574f88bac8874528fb5, type: 3}
